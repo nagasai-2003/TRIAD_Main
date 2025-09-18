@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@400;500;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+/* Custom TRIAD Academy styles */
+.montserrat {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.inter {
+  font-family: 'Inter', sans-serif;
+}
+
+.pyramid-stack {
+  animation: pyramidStack 2s ease-in-out infinite alternate;
+}
+
+@keyframes pyramidStack {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+.glow-cyan {
+  box-shadow: 0 0 20px rgba(0, 207, 255, 0.3);
+}
+
+.glow-cyan-hover:hover {
+  box-shadow: 0 0 40px rgba(0, 207, 255, 0.4);
+  transform: translateY(-4px);
+  border-color: rgba(0, 207, 255, 0.5);
+  transition: all 0.3s ease-in-out;
+}
+
+.fade-in {
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.pyramid-glow {
+  filter: drop-shadow(0 0 15px rgba(0, 207, 255, 0.4));
+}
+
+/* Add this for the green glow on the WhatsApp button */
+.glow-green {
+    box-shadow: 0 0 20px rgba(34, 197, 94, 0.4);
+}
