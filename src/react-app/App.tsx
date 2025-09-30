@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ScrollToTop from "@/react-app/components/ScrollToTop";
-import Header from "@/react-app/components/Header";
+import Layout from "@/react-app/components/Layout";
 import HomePage from "@/react-app/pages/Home";
 import AboutPage from "@/react-app/pages/About";
 import CoursesPage from "@/react-app/pages/Courses";
@@ -12,24 +12,27 @@ import CareersPage from "@/react-app/pages/Careers";
 import PrivacyPolicyPage from "@/react-app/pages/PrivacyPolicy";
 import TermsOfServicePage from "@/react-app/pages/TermsOfService";
 import UpcomingPage from "@/react-app/pages/Upcoming";
+import NotFoundPage from "@/react-app/pages/NotFound";
 
 export default function App() {
   return (
     <Router>
       <ScrollToTop />
-      <Header />
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/courses" element={<CoursesPage />} />
-        <Route path="/projects" element={<ProjectsPage />} />
-        <Route path="/contact" element={<ContactPage />} />
-        <Route path="/whytriad" element={<WhyTriadPage />} />
-        <Route path="/resources" element={<ResourcesPage />} />
-        <Route path="/careers" element={<CareersPage />} />
-        <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
-        <Route path="/terms-of-service" element={<TermsOfServicePage />} />
-        <Route path="/upcoming" element={<UpcomingPage />} />
+        <Route element={<Layout />}>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/courses" element={<CoursesPage />} />
+          <Route path="/projects" element={<ProjectsPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/whytriad" element={<WhyTriadPage />} />
+          <Route path="/resources" element={<ResourcesPage />} />
+          <Route path="/careers" element={<CareersPage />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+          <Route path="/terms-of-service" element={<TermsOfServicePage />} />
+          <Route path="/upcoming" element={<UpcomingPage />} />
+        </Route>
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Router>
   );
