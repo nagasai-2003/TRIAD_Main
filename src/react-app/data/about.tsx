@@ -50,19 +50,19 @@ export const mentors = [
     name: "B. Mark Nicholas",
     expertise: "Full Stack Development",
     quote: "Building a robust application is like constructing a skyscraper. You need a strong foundation (backend) and a beautiful, functional facade (frontend)",
-    image: "src/react-app/assets/Nicholas_Professional_1.png"
+    image: "public/Nicholas_Professional_1.png"
   },
   {
     name: "T. Naga Sai",
     expertise: "Quantum Computing and AI",
     quote: "Quantum computing will unlock the next frontier of AI, moving from complex problem-solving to true simulated intelligence.",
-    image: "src/react-app/assets/Naga_Sai_Professional.png"
+    image: "public/Naga_Sai_Professional.png"
   },
   {
     name: "T.G.S Prasad",
     expertise: "MAANG Prep and DSA",
     quote: "Clean code is not just about syntax - it's about thinking clearly.",
-    image: "src/react-app/assets/Prasad_Professionl.png"
+    image: "public/Prasad_Professionl.png"
   },
   // {
   //   name: "Dr. James Thompson",

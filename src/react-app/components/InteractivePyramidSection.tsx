@@ -20,7 +20,7 @@ export default function InteractivePyramidSection() {
           {/* Interactive Pyramid Visual */}
           <div className="lg:w-1/2 relative flex justify-center items-center">
             <img 
-              src="src/react-app/assets/Images/Triad_Academy_Logo_under_text_Transparent.png"
+              src="public/Images/Triad_Academy_Logo_under_text_Transparent.png"
               alt="TRIAD Academy Logo"
               className="w-120 h-120 object-contain pyramid-glow"
             />
