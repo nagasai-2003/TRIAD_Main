@@ -34,7 +34,7 @@ export default function GlobalFocusSection() {
               <div className="w-16 h-16 bg-sky-cyan/20 rounded-full mx-auto mb-4 flex items-center justify-center group-hover:bg-sky-cyan/40 transition-colors duration-300">
                 <Users className="w-8 h-8 text-sky-cyan" />
               </div>
-              <h3 className="font-montserrat font-bold text-2xl text-sky-cyan mb-2">1000+</h3>
+              <h3 className="font-montserrat font-bold text-2xl text-sky-cyan mb-2">10,000+</h3>
               <p className="font-inter text-arctic-white">National Wide Students</p>
             </div>
             
