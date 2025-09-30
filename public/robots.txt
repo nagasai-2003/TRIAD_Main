@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://triadacademy.com/sitemap.xml
+Sitemap: https://triadacademy.in/sitemap.xml
