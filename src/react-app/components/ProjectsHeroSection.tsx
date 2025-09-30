@@ -2,10 +2,18 @@ import { useEffect } from 'react';
 import PyramidIcon from './PyramidIcon';
 import { ChevronDown } from 'lucide-react';
 
+/**
+ * The hero section for the Projects page.
+ * It sets a compelling tone with a strong headline, an animated pyramid, and a call to explore student projects.
+ * Optimized for performance by using a subtle SVG grid for the background instead of heavy blur effects.
+ */
 export default function ProjectsHeroSection() {
 
+  // An effect to enable smooth scrolling for anchor links on this page.
   useEffect(() => {
+    // Apply smooth scrolling to the root element.
     document.documentElement.style.scrollBehavior = 'smooth';
+    // Clean up the effect by reverting to default scroll behavior when the component unmounts.
     return () => {
       document.documentElement.style.scrollBehavior = 'auto';
     };
@@ -13,13 +21,20 @@ export default function ProjectsHeroSection() {
 
   return (
     <section className="relative min-h-screen bg-gradient-to-br from-steel-navy via-steel-navy to-blue-900 flex items-center justify-center overflow-hidden">
-      {/* Background glow effects */}
-      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-sky-cyan/10 to-transparent"></div>
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-sky-cyan/5 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-sky-cyan/5 rounded-full blur-3xl"></div>
+      {/* Optimized Background: A subtle, performant SVG grid pattern */}
+      <div className="absolute inset-0 opacity-10">
+        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="projects-hero-grid" width="80" height="80" patternUnits="userSpaceOnUse">
+              <path d="M 80 0 L 0 0 0 80" fill="none" stroke="#00CFFF" strokeWidth="0.5"/>
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#projects-hero-grid)" />
+        </svg>
+      </div>
       
       <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
-        {/* Animated Pyramid */}
+        {/* Animated Pyramid Icon */}
         <div className="mb-8 flex justify-center">
           <PyramidIcon className="w-40 h-40" animated={true} />
         </div>
@@ -40,10 +55,11 @@ export default function ProjectsHeroSection() {
           see how our hands-on approach transforms learners into creators.
         </p>
         
-        {/* CTA Button */}
+        {/* Call-to-action Button */}
         <div className="fade-in">
           <a 
             href="#all-projects"
+            aria-label="Explore student projects"
             className="bg-sky-cyan text-steel-navy font-montserrat font-semibold px-10 py-5 rounded-2xl text-xl glow-cyan-hover transition-all duration-300 hover:scale-105 inline-block"
           >
             Explore Student Projects
@@ -51,12 +67,16 @@ export default function ProjectsHeroSection() {
         </div>
       </div>
       
-      {/* Scroll indicator */}
-      <a href="#all-projects" className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
+      {/* Animated scroll-down indicator */}
+      <a 
+        href="#all-projects" 
+        aria-label="Scroll down to all projects"
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-20"
+      >
         <ChevronDown className="w-8 h-8 text-sky-cyan" />
       </a>
       
-      {/* Floating code elements */}
+      {/* Decorative floating code snippets */}
       <div className="absolute top-20 left-10 text-sky-cyan/30 font-mono text-sm animate-pulse">
         {'{ innovation: "unlimited" }'}
       </div>

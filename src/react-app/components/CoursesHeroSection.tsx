@@ -1,10 +1,18 @@
 import { useEffect } from 'react';
 import { ChevronDown } from 'lucide-react';
 
+/**
+ * A hero section for the courses page.
+ * It features a prominent headline, a subheadline, a CTA button, and a scroll indicator.
+ * Optimized for performance by using a subtle SVG grid for the background instead of heavy blur effects.
+ */
 export default function CoursesHeroSection() {
 
+  // An effect to enable smooth scrolling when the component mounts
   useEffect(() => {
+    // Enable smooth scrolling for the entire page
     document.documentElement.style.scrollBehavior = 'smooth';
+    // Disable smooth scrolling when the component unmounts
     return () => {
       document.documentElement.style.scrollBehavior = 'auto';
     };
@@ -12,10 +20,17 @@ export default function CoursesHeroSection() {
 
   return (
     <section className="relative min-h-screen bg-gradient-to-br from-steel-navy via-steel-navy to-blue-900 flex items-center justify-center overflow-hidden">
-      {/* Background glow effects */}
-      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-sky-cyan/10 to-transparent"></div>
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-sky-cyan/5 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-sky-cyan/5 rounded-full blur-3xl"></div>
+      {/* Optimized Background: A subtle, performant SVG grid pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="courses-hero-grid" width="80" height="80" patternUnits="userSpaceOnUse">
+              <path d="M 80 0 L 0 0 0 80" fill="none" stroke="#00CFFF" strokeWidth="0.5"/>
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#courses-hero-grid)" />
+        </svg>
+      </div>
       
       <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
         {/* Main Headline */}

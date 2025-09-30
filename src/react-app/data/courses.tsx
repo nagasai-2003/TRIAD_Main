@@ -1,6 +1,9 @@
-import pyicon from "@/icons/icons8-python.svg";
-import javaicon from "@/icons/icon_java.svg";
+// import pyicon from "@/icons/icons8-python.svg";
+import qc_icon from "@/icons/Quantum_Icon.png";
+// import javaicon from "@/icons/icon_java.svg";
 import aimlicon from "@/icons/icons8-ai-100.png";
+// import ai_icon from "https://cdn-icons-png.flaticon.com/512/10644/10644636.png";
+import ai_icon from "@/icons/ai_icon.png"
 
 // import { Code, Brain, Zap, Palette, Video, BarChart2 } from 'lucide-react';
 
@@ -16,43 +19,84 @@ export interface Course {
   features: string[];
   featured: boolean;
   status: CourseStatus;
+  enrollmentLink: string;
+  cta:string;
 }
 
 export const allCourses: Course[] = [
   {
-    category: "Programming",
-    title: "45 Days of Python Mastery Course",
-    description: "Learn Python from scratch to advanced in just 45 days with real-world projects, problem-solving, and DSA essentials—perfectly designed for career and interview preparation.",
-    duration: "45 Days",
-    level: "Beginner to Advanced",
-    icon: <img src={pyicon} alt="Python Icon" className="w-18 h-18" />,
+    category: "Quantum Computing",
+    title: "30 Days of Quantum Immersion Course",
+    description: "Demystify Quantum Computing in just 30 days. Learn the core principles, essential math, and foundational algorithms using **IBM's Qiskit**. Prepare for the future of computation with daily, byte-sized lessons perfect for social media.",
+    duration: "30 Days",
+    level: "Beginner to Intermediate",
+    icon: <img src={qc_icon} alt="Quantum Computing Icon" className="w-13 h-12" />,
     features: [
-      "Core Python + OOPs",
-      "5+ Hands-on Projects for GitHub & LinkedIn",
-      "Data Structures & Algorithms",
-      "50+ Coding Problems (HackerRank, LeetCode)",
-      "Industry-Level Certification"
+      "Quantum Mechanics Essentials (Non-Math Heavy)",
+      "Qubit and Quantum Gate Operations",
+      "Hands-on coding with **Qiskit & Python**",
+      "Understanding of key algorithms (e.g., Grover's, Deutsch-Jozsa)",
+      "Final Quantum Circuit Project Submission"
     ],
     featured: true,
-    status: "Running"
-  },
+    status: "Running", // Or "Running"
+    enrollmentLink: "/resources",
+    cta:"View"
+},
+// {
+//   category: "Programming",
+//   title: "45 Days of Python Mastery Course",
+//   description: "Learn Python from scratch to advanced in just 45 days with real-world projects, problem-solving, and DSA essentials—perfectly designed for career and interview preparation.",
+//   duration: "45 Days",
+//   level: "Beginner to Advanced",
+//   icon: <img src={pyicon} alt="Python Icon" className="w-18 h-18" />,
+//   features: [
+//   "Core Python + OOPs",
+//   "5+ Hands-on Projects for GitHub & LinkedIn",
+//   "Data Structures & Algorithms",
+//   "50+ Coding Problems (HackerRank, LeetCode)",
+//   "Industry-Level Certification"
+//   ],
+//   featured: true,
+//   status: "Running"
+// },
+
   {
-    category: "Programming",
-    title: "45 Days of Java Mastery Course",
-    description: "Master Java programming in 45 days, from fundamentals to advanced topics. This course is packed with practical projects and problem-solving to get you job-ready.",
-    duration: "45 Days",
-    level: "Beginner to Advanced",
-    icon: <img src={javaicon} alt="Java Icon" className="w-12 h-12" />,
+    category: "AI & Generative Tools",
+    title: "30 Days of Gen AI & Tools Mastery",
+    description: "Learn to master the most powerful **AI tools** in 30 days! From prompt engineering and Generative AI (LLMs/Images) to building basic AI agents. Focuses on **practical, career-boosting application**.",
+    duration: "30 Days",
+    level: "Beginner to Intermediate",
+    icon: <img src = {ai_icon} alt="AI Tool Icon" className="w-12 h-13" />,
     features: [
-      "Core Java + OOPs",
-      "Spring Boot & RESTful APIs",
-      "Data Structures & Algorithms",
-      "50+ Coding Problems",
-      "Build & Deploy 3+ Projects"
+      "Expert Prompt Engineering for LLMs (ChatGPT/Claude)",
+      "Hands-on with Generative Image/Video Tools",
+      "Foundational concepts of **Machine Learning (ML)**",
+      "Building a simple **AI Agent** using Python",
+      "Certification in Applied AI Tools"
     ],
     featured: true,
-    status: "Upcoming"
-  },
+    status: "Running",
+    enrollmentLink: "/resources",
+    cta:"View"
+},
+  // {
+  //   category: "Programming",
+  //   title: "45 Days of Java Mastery Course",
+  //   description: "Master Java programming in 45 days, from fundamentals to advanced topics. This course is packed with practical projects and problem-solving to get you job-ready.",
+  //   duration: "45 Days",
+  //   level: "Beginner to Advanced",
+  //   icon: <img src={javaicon} alt="Java Icon" className="w-12 h-12" />,
+  //   features: [
+  //     "Core Java + OOPs",
+  //     "Spring Boot & RESTful APIs",
+  //     "Data Structures & Algorithms",
+  //     "50+ Coding Problems",
+  //     "Build & Deploy 3+ Projects"
+  //   ],
+  //   featured: true,
+  //   status: "Upcoming"
+  // },
   {
     category: "Programming",
     title: "75 Days of AI & Machine Learning Mastery Course",
@@ -70,6 +114,8 @@ export const allCourses: Course[] = [
       "Industry-Level Certification"
     ],
     featured: true,
-    status: "Upcoming"
+    status: "Upcoming",
+    enrollmentLink: "/upcoming",
+    cta:"Upcoming"
   },  
 ];

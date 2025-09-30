@@ -1,5 +1,6 @@
 import { Mail, Phone, MapPin } from 'lucide-react';
 
+// An array of contact information, each with an icon, title, and details
 const contactDetails = [
   {
     icon: <MapPin className="w-8 h-8" />,
@@ -21,10 +22,15 @@ const contactDetails = [
   }
 ];
 
+/**
+ * A section that displays contact details in a grid format.
+ * Each contact detail includes an icon, title, and address/phone/email information.
+ */
 export default function ContactDetails() {
   return (
     <section className="py-20 bg-frost-gray">
       <div className="max-w-6xl mx-auto px-6">
+        {/* Section header */}
         <div className="text-center mb-16 fade-in">
           <h2 className="font-montserrat font-bold text-4xl md:text-5xl text-steel-navy mb-6">
             Quick Access Info
@@ -34,6 +40,7 @@ export default function ContactDetails() {
           </p>
         </div>
         
+        {/* Grid of contact details */}
         <div className="grid md:grid-cols-3 gap-8">
           {contactDetails.map((detail, index) => (
             <div 
@@ -41,19 +48,19 @@ export default function ContactDetails() {
               className="group bg-white rounded-2xl p-8 text-center shadow-lg border-2 border-frost-gray hover:border-sky-cyan hover:shadow-xl glow-cyan-hover transition-all duration-300 fade-in"
               style={{ animationDelay: `${index * 0.2}s` }}
             >
-              {/* Icon */}
+              {/* Icon for the contact detail */}
               <div className="mb-6 flex justify-center">
                 <div className="w-16 h-16 bg-sky-cyan/10 rounded-2xl flex items-center justify-center text-steel-navy group-hover:bg-sky-cyan/20 group-hover:text-sky-cyan transition-all duration-300">
                   {detail.icon}
                 </div>
               </div>
               
-              {/* Title */}
+              {/* Title of the contact detail */}
               <h3 className="font-montserrat font-bold text-xl text-steel-navy mb-4 group-hover:text-sky-cyan transition-colors duration-300">
                 {detail.title}
               </h3>
               
-              {/* Details */}
+              {/* Main and sub-details for the contact information */}
               <p className="font-inter font-semibold text-charcoal-gray mb-2">
                 {detail.details}
               </p>

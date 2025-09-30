@@ -6,19 +6,25 @@ import InteractivePyramidSection from '../components/InteractivePyramidSection';
 import MentorsSection from '../components/MentorsSection';
 import GlobalFocusSection from '../components/GlobalFocusSection';
 import AboutCTASection from '../components/AboutCTASection';
-import Header from '../components/Header';
 
+/**
+ * The about page of the application.
+ * It is composed of several sections that describe the company and its mission.
+ */
 export default function About() {
   return (
     <div className="min-h-screen">
-      <Header />
-      <AboutHeroSection />
-      <VisionMissionSection />
-      <JourneySection />
-      <InteractivePyramidSection />
-      <MentorsSection />
-      <GlobalFocusSection />
-      <AboutCTASection />
+      {/* Main content of the page */}
+      <main>
+        <AboutHeroSection />
+        <VisionMissionSection />
+        <JourneySection />
+        <InteractivePyramidSection />
+        <MentorsSection />
+        <GlobalFocusSection />
+        <AboutCTASection />
+      </main>
+      {/* Footer, which is a shared component */}
       <Footer />
     </div>
   );

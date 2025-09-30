@@ -1,17 +1,53 @@
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import PyramidIcon from './PyramidIcon';
 import { Rocket, Users, Star } from 'lucide-react';
+import { useMemo } from 'react';
 
+/**
+ * A Call-to-Action (CTA) section specifically for the projects page.
+ * It encourages users to start their learning journey and highlights key success metrics.
+ * Optimized for performance by replacing blurred divs with a lightweight SVG grid background.
+ */
 export default function ProjectsCTASection() {
+
+  // Memoized data for the success statistics to prevent re-creation on every render.
+  const stats = useMemo(() => [
+    {
+      icon: <Rocket className="w-10 h-10 text-sky-cyan" />,
+      value: "1000+",
+      label: "Projects Built",
+      sublabel: "By our students",
+    },
+    {
+      icon: <Users className="w-10 h-10 text-sky-cyan" />,
+      value: "85%",
+      label: "Job Placement Rate",
+      sublabel: "Within 6 months",
+    },
+    {
+      icon: <Star className="w-10 h-10 text-sky-cyan" />,
+      value: "50+",
+      label: "Industry Awards",
+      sublabel: "Won by student projects",
+    },
+  ], []);
+
   return (
     <section className="py-20 bg-gradient-to-br from-steel-navy via-steel-navy to-blue-900 relative overflow-hidden">
-      {/* Background effects */}
-      <div className="absolute inset-0 bg-gradient-to-r from-sky-cyan/10 via-transparent to-sky-cyan/10"></div>
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-sky-cyan/5 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-sky-cyan/5 rounded-full blur-3xl"></div>
+      {/* Optimized Background: A subtle, performant SVG grid pattern */}
+      <div className="absolute inset-0 opacity-10">
+        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="cta-grid" width="100" height="100" patternUnits="userSpaceOnUse">
+              <path d="M 100 0 L 0 0 0 100" fill="none" stroke="#00CFFF" strokeWidth="0.5"/>
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#cta-grid)" />
+        </svg>
+      </div>
       
       <div className="relative z-10 max-w-6xl mx-auto px-6">
-        {/* Animated Pyramid */}
+        {/* Animated Pyramid Icon */}
         <div className="mb-8 flex justify-center">
           <PyramidIcon className="w-32 h-32" animated={true} />
         </div>
@@ -30,34 +66,18 @@ export default function ProjectsCTASection() {
           </p>
         </div>
 
-        {/* Success Stats */}
+        {/* Success Stats Section */}
         <div className="grid md:grid-cols-3 gap-8 mb-16 fade-in">
-          <div className="text-center group">
-            <div className="w-20 h-20 bg-sky-cyan/20 rounded-2xl mx-auto mb-4 flex items-center justify-center group-hover:bg-sky-cyan/30 transition-colors duration-300">
-              <Rocket className="w-10 h-10 text-sky-cyan" />
+          {stats.map((stat, index) => (
+            <div key={index} className="text-center group">
+              <div className="w-20 h-20 bg-sky-cyan/20 rounded-2xl mx-auto mb-4 flex items-center justify-center group-hover:bg-sky-cyan/30 transition-colors duration-300">
+                {stat.icon}
+              </div>
+              <h3 className="font-montserrat font-bold text-3xl text-sky-cyan mb-2">{stat.value}</h3>
+              <p className="font-inter text-arctic-white/80">{stat.label}</p>
+              <p className="font-inter text-sm text-arctic-white/60">{stat.sublabel}</p>
             </div>
-            <h3 className="font-montserrat font-bold text-3xl text-sky-cyan mb-2">1000+</h3>
-            <p className="font-inter text-arctic-white/80">Projects Built</p>
-            <p className="font-inter text-sm text-arctic-white/60">By our students</p>
-          </div>
-          
-          <div className="text-center group">
-            <div className="w-20 h-20 bg-sky-cyan/20 rounded-2xl mx-auto mb-4 flex items-center justify-center group-hover:bg-sky-cyan/30 transition-colors duration-300">
-              <Users className="w-10 h-10 text-sky-cyan" />
-            </div>
-            <h3 className="font-montserrat font-bold text-3xl text-sky-cyan mb-2">85%</h3>
-            <p className="font-inter text-arctic-white/80">Job Placement Rate</p>
-            <p className="font-inter text-sm text-arctic-white/60">Within 6 months</p>
-          </div>
-          
-          <div className="text-center group">
-            <div className="w-20 h-20 bg-sky-cyan/20 rounded-2xl mx-auto mb-4 flex items-center justify-center group-hover:bg-sky-cyan/30 transition-colors duration-300">
-              <Star className="w-10 h-10 text-sky-cyan" />
-            </div>
-            <h3 className="font-montserrat font-bold text-3xl text-sky-cyan mb-2">50+</h3>
-            <p className="font-inter text-arctic-white/80">Industry Awards</p>
-            <p className="font-inter text-sm text-arctic-white/60">Won by student projects</p>
-          </div>
+          ))}
         </div>
         
         {/* CTA Buttons */}
@@ -77,7 +97,7 @@ export default function ProjectsCTASection() {
             </Link>
           </div>
           
-          {/* Trust indicators */}
+          {/* Trust Indicators */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-8 text-arctic-white/60">
             <div className="flex items-center space-x-2">
               <div className="w-2 h-2 bg-sky-cyan rounded-full"></div>
@@ -95,7 +115,7 @@ export default function ProjectsCTASection() {
         </div>
       </div>
       
-      {/* Floating code elements */}
+      {/* Decorative floating code snippets */}
       <div className="absolute top-20 left-10 text-sky-cyan/20 font-mono text-sm animate-pulse">
         {'function buildProject() { return success; }'}
       </div>

@@ -55,11 +55,17 @@ export default function StudentShowcaseTestimonials() {
   const currentTestimonial = testimonials[activeTestimonial];
 
   return (
-    <section className="py-20 bg-frost-gray">
+    <section 
+      className="py-20 bg-frost-gray"
+      aria-labelledby="student-showcase-heading"
+    >
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-16 fade-in">
-          <h2 className="font-montserrat font-bold text-4xl md:text-5xl text-steel-navy mb-6">
+          <h2 
+            id="student-showcase-heading"
+            className="font-montserrat font-bold text-4xl md:text-5xl text-steel-navy mb-6"
+          >
             What Our Students Built & Said
           </h2>
           <p className="font-inter text-lg text-charcoal-gray max-w-2xl mx-auto">
@@ -128,12 +134,14 @@ export default function StudentShowcaseTestimonials() {
               <div className="absolute top-4 right-4 flex space-x-2">
                 <a 
                   href={currentTestimonial.github}
+                  aria-label={`View the GitHub repository for ${currentTestimonial.projectTitle}`}
                   className="w-10 h-10 bg-white/20 backdrop-blur-lg rounded-full flex items-center justify-center text-white hover:bg-sky-cyan hover:text-steel-navy transition-colors duration-300"
                 >
                   <Github className="w-5 h-5" />
                 </a>
                 <a 
                   href={currentTestimonial.demo}
+                  aria-label={`View the demo for ${currentTestimonial.projectTitle}`}
                   className="w-10 h-10 bg-white/20 backdrop-blur-lg rounded-full flex items-center justify-center text-white hover:bg-sky-cyan hover:text-steel-navy transition-colors duration-300"
                 >
                   <ExternalLink className="w-5 h-5" />

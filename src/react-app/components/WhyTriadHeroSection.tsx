@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 
 export default function WhyTriadHeroSection() {
   const [visibleLayers, setVisibleLayers] = useState<number[]>([]);
@@ -16,9 +16,9 @@ export default function WhyTriadHeroSection() {
   }, []);
 
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-steel-navy via-steel-navy to-blue-900 flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen bg-gradient-to-br from-steel-navy via-steel-navy to-blue-900 flex items-center justify-center overflow-hidden" aria-labelledby="why-triad-hero-heading">
       {/* Background grid pattern */}
-      <div className="absolute inset-0 opacity-10">
+      <div className="absolute inset-0 opacity-10" aria-hidden="true">
         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
@@ -30,13 +30,13 @@ export default function WhyTriadHeroSection() {
       </div>
       
       {/* Background glow effects */}
-      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-sky-cyan/5 to-transparent"></div>
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-sky-cyan/5 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-sky-cyan/5 rounded-full blur-3xl"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-sky-cyan/5 to-transparent" aria-hidden="true"></div>
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-sky-cyan/5 rounded-full blur-3xl" aria-hidden="true"></div>
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-sky-cyan/5 rounded-full blur-3xl" aria-hidden="true"></div>
       
       <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
         {/* 3D Pyramid Illustration */}
-        <div className="mb-12 flex justify-center">
+        <div className="mb-12 flex justify-center" aria-hidden="true">
           <div className="relative w-80 h-80">
             {/* Base Layer */}
             <div 
@@ -103,7 +103,7 @@ export default function WhyTriadHeroSection() {
         </div>
         
         {/* Main Headline */}
-        <h1 className="font-montserrat font-bold text-5xl md:text-7xl text-arctic-white mb-8 fade-in">
+        <h1 id="why-triad-hero-heading" className="font-montserrat font-bold text-5xl md:text-7xl text-arctic-white mb-8 fade-in">
           The TRIAD Advantage
         </h1>
         
@@ -124,10 +124,10 @@ export default function WhyTriadHeroSection() {
       </div>
       
       {/* Floating code elements */}
-      <div className="absolute top-20 left-10 text-sky-cyan/30 font-mono text-sm animate-pulse">
+      <div className="absolute top-20 left-10 text-sky-cyan/30 font-mono text-sm animate-pulse" aria-hidden="true">
         {'const advantage = "TRIAD";'}
       </div>
-      <div className="absolute bottom-32 right-10 text-sky-cyan/30 font-mono text-sm animate-pulse">
+      <div className="absolute bottom-32 right-10 text-sky-cyan/30 font-mono text-sm animate-pulse" aria-hidden="true">
         {'function transform() { return future; }'}
       </div>
     </section>

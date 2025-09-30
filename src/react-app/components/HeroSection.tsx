@@ -62,7 +62,7 @@ export default function HeroSection() {
           <Link to="/courses" className="bg-sky-cyan text-steel-navy font-montserrat font-semibold px-8 py-4 rounded-2xl text-lg glow-cyan-hover transition-all duration-300 hover:scale-105 inline-block">
             Explore Courses
           </Link>
-          <Link to="/why-triad" className={secondaryButtonClassName}>
+          <Link to="/whytriad" className={secondaryButtonClassName}>
             Why to Choose TRIAD
           </Link>
         </div>

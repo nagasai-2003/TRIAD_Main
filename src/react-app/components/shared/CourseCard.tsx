@@ -1,11 +1,25 @@
-import { Link } from 'react-router-dom';
 import { Course, CourseStatus } from '../../data/courses';
 
+/**
+ * Props for the CourseCard component.
+ */
 interface CourseCardProps {
+  /**
+   * The course object to display.
+   */
   course: Course;
+  /**
+   * If true, a "Featured" badge will be displayed on the card.
+   * @default false
+   */
   isFeatured?: boolean;
 }
 
+/**
+ * A card component that displays information about a single course.
+ * It includes details like title, description, duration, level, and features.
+ * It also has a link to enroll in the course.
+ */
 export default function CourseCard({ course, isFeatured = false }: CourseCardProps) {
   const statusColors: Record<CourseStatus, string> = {
     Upcoming: 'bg-blue-500',
@@ -13,8 +27,14 @@ export default function CourseCard({ course, isFeatured = false }: CourseCardPro
     Completed: 'bg-gray-500',
   };
 
+  const courseTitleId = `course-title-${course.title.replace(/\s+/g, '-').toLowerCase()}`;
+
   return (
-    <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl glow-cyan-hover transition-all duration-300 border border-frost-gray fade-in group flex flex-col relative">
+    <div 
+      className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl glow-cyan-hover transition-all duration-300 border border-frost-gray fade-in group flex flex-col relative"
+      role="article"
+      aria-labelledby={courseTitleId}
+    >
       {isFeatured && (
         <div className="absolute top-0 right-0 bg-yellow-400 text-steel-navy font-semibold px-3 py-1 rounded-bl-lg rounded-tr-lg z-10">
           Featured
@@ -27,7 +47,10 @@ export default function CourseCard({ course, isFeatured = false }: CourseCardPro
         <div className="mb-6 text-sky-cyan group-hover:scale-110 transition-transform duration-300">
           {course.icon}
         </div>
-        <h3 className="font-montserrat font-bold text-2xl text-steel-navy mb-4">
+        <h3 
+          id={courseTitleId}
+          className="font-montserrat font-bold text-2xl text-steel-navy mb-4"
+        >
           {course.title}
         </h3>
         <p className="font-inter text-charcoal-gray mb-6 leading-relaxed">
@@ -38,21 +61,24 @@ export default function CourseCard({ course, isFeatured = false }: CourseCardPro
           <li><strong>Level:</strong> {course.level}</li>
         </ul>
         <ul className="space-y-2 mt-4">
-          {course.features.map((feature, featureIndex) => (
-            <li key={featureIndex} className="flex items-center text-sm text-charcoal-gray">
-              <div className="w-2 h-2 bg-sky-cyan rounded-full mr-3"></div>
+          {course.features.map((feature) => (
+            <li key={feature} className="flex items-center text-sm text-charcoal-gray">
+              <div aria-hidden="true" className="w-2 h-2 bg-sky-cyan rounded-full mr-3"></div>
               {feature}
             </li>
           ))}
         </ul>
       </div>
       <div className="mt-8 text-center">
-        <Link 
-          to="/contact"
+        <a 
+          href={course.enrollmentLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`Enroll Now for ${course.title}`}
           className="bg-sky-cyan text-steel-navy font-montserrat font-semibold px-6 py-3 rounded-xl glow-cyan-hover transition-all duration-300 hover:scale-105 inline-block"
         >
-          Enroll Now
-        </Link>
+          {course.cta}
+        </a>
       </div>
     </div>
   );

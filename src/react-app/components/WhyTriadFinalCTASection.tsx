@@ -1,16 +1,16 @@
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import PyramidIcon from './PyramidIcon';
 
 export default function WhyTriadFinalCTASection() {
   return (
-    <section className="py-20 bg-gradient-to-br from-steel-navy via-steel-navy to-blue-900 relative overflow-hidden">
+    <section className="py-20 bg-gradient-to-br from-steel-navy via-steel-navy to-blue-900 relative overflow-hidden" aria-labelledby="final-cta-heading">
       {/* Background effects */}
-      <div className="absolute inset-0 bg-gradient-to-r from-sky-cyan/10 via-transparent to-sky-cyan/10"></div>
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-sky-cyan/5 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-sky-cyan/5 rounded-full blur-3xl"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-sky-cyan/10 via-transparent to-sky-cyan/10" aria-hidden="true"></div>
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-sky-cyan/5 rounded-full blur-3xl" aria-hidden="true"></div>
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-sky-cyan/5 rounded-full blur-3xl" aria-hidden="true"></div>
       
       {/* Animated grid background */}
-      <div className="absolute inset-0 opacity-5">
+      <div className="absolute inset-0 opacity-5" aria-hidden="true">
         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <pattern id="final-grid" width="60" height="60" patternUnits="userSpaceOnUse">
@@ -28,7 +28,7 @@ export default function WhyTriadFinalCTASection() {
         </div>
         
         {/* Main Headline */}
-        <h2 className="font-montserrat font-bold text-4xl md:text-6xl text-arctic-white mb-8 fade-in">
+        <h2 id="final-cta-heading" className="font-montserrat font-bold text-4xl md:text-6xl text-arctic-white mb-8 fade-in">
           Choose TRIAD. Choose the Future.
         </h2>
         
@@ -55,23 +55,23 @@ export default function WhyTriadFinalCTASection() {
         </div>
         
         {/* Trust indicators */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-8 text-arctic-white/60 fade-in">
-          <div className="flex items-center space-x-2">
-            <div className="w-2 h-2 bg-sky-cyan rounded-full animate-pulse"></div>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-8 text-arctic-white/60 fade-in" role="list">
+          <div className="flex items-center space-x-2" role="listitem">
+            <div className="w-2 h-2 bg-sky-cyan rounded-full animate-pulse" aria-hidden="true"></div>
             <span className="font-inter text-sm">Future-ready curriculum</span>
           </div>
-          <div className="flex items-center space-x-2">
-            <div className="w-2 h-2 bg-sky-cyan rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+          <div className="flex items-center space-x-2" role="listitem">
+            <div className="w-2 h-2 bg-sky-cyan rounded-full animate-pulse" style={{ animationDelay: '0.5s' }} aria-hidden="true"></div>
             <span className="font-inter text-sm">Global industry standards</span>
           </div>
-          <div className="flex items-center space-x-2">
-            <div className="w-2 h-2 bg-sky-cyan rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
+          <div className="flex items-center space-x-2" role="listitem">
+            <div className="w-2 h-2 bg-sky-cyan rounded-full animate-pulse" style={{ animationDelay: '1s' }} aria-hidden="true"></div>
             <span className="font-inter text-sm">Expert mentorship</span>
           </div>
         </div>
         
         {/* Final accent */}
-        <div className="mt-12 flex justify-center items-center space-x-4 fade-in">
+        <div className="mt-12 flex justify-center items-center space-x-4 fade-in" aria-hidden="true">
           <div className="w-12 h-1 bg-sky-cyan rounded"></div>
           <div className="w-6 h-6 bg-sky-cyan transform rotate-45 animate-pulse"></div>
           <div className="w-12 h-1 bg-sky-cyan rounded"></div>
@@ -79,10 +79,10 @@ export default function WhyTriadFinalCTASection() {
       </div>
       
       {/* Floating code elements */}
-      <div className="absolute top-20 left-10 text-sky-cyan/20 font-mono text-sm animate-pulse">
+      <div className="absolute top-20 left-10 text-sky-cyan/20 font-mono text-sm animate-pulse" aria-hidden="true">
         {'while (learning) { innovate(); }'}
       </div>
-      <div className="absolute bottom-20 right-10 text-sky-cyan/20 font-mono text-sm animate-pulse">
+      <div className="absolute bottom-20 right-10 text-sky-cyan/20 font-mono text-sm animate-pulse" aria-hidden="true">
         {'const future = await TRIAD();'}
       </div>
     </section>

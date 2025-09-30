@@ -1,4 +1,21 @@
 export default function GlobalVisionSection() {
+  // Data for the stats overlay
+  const stats = [
+    { value: "5+", label: "States" },
+    { value: "10,000+", label: "Students" },
+    { value: "100+", label: "Real Time Projects" },
+  ];
+
+  // Data for the glowing nodes on the map
+  const nodes = [
+    { top: '30%', left: '20%', label: 'Andhra Pradesh' },
+    { top: '40%', left: '45%', label: 'Telengana' },
+    { top: '50%', left: '70%', label: 'Tamil Nadu' },
+    { top: '35%', left: '60%', label: 'Karnataka' },
+    { top: '60%', left: '80%', label: 'Maharastra' },
+    { top: '45%', left: '15%', label: 'Assam' }
+  ];
+
   return (
     <section className="py-20 bg-arctic-white overflow-hidden">
       <div className="max-w-6xl mx-auto px-6">
@@ -18,10 +35,10 @@ export default function GlobalVisionSection() {
             {/* Background gradient effects */}
             <div className="absolute inset-0 bg-gradient-to-r from-sky-cyan/5 via-transparent to-sky-cyan/5"></div>
             
-            {/* Stylized world map using CSS */}
+            {/* Stylized world map using SVG paths */}
             <div className="relative z-10">
               <svg viewBox="0 0 800 400" className="w-full h-64 opacity-30">
-                {/* Simplified world continents */}
+                {/* Simplified world continents - purely decorative */}
                 <path d="M100 150 Q150 100 200 120 Q250 110 300 130 Q350 140 400 135 Q450 130 500 140 Q550 150 600 145 Q650 140 700 150" 
                       stroke="#00CFFF" strokeWidth="2" fill="none" className="animate-pulse" />
                 <path d="M150 200 Q200 180 250 190 Q300 185 350 195 Q400 200 450 195 Q500 190 550 200" 
@@ -30,18 +47,10 @@ export default function GlobalVisionSection() {
                       stroke="#00CFFF" strokeWidth="2" fill="none" className="animate-pulse" style={{ animationDelay: '2s' }} />
               </svg>
               
-              {/* Glowing nodes representing global presence */}
+              {/* Glowing nodes representing TRIAD's presence in different states */}
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="relative w-full h-full">
-                  {/* Node positions representing major cities */}
-                  {[
-                    { top: '30%', left: '20%', label: 'Andhra Pradesh' },
-                    { top: '40%', left: '45%', label: 'Telengana' },
-                    { top: '50%', left: '70%', label: 'Tamil Nadu' },
-                    { top: '35%', left: '60%', label: 'Karnataka' },
-                    { top: '60%', left: '80%', label: 'Maharastra' },
-                    { top: '45%', left: '15%', label: 'Assam' }
-                  ].map((node, index) => (
+                  {nodes.map((node, index) => (
                     <div 
                       key={index}
                       className="absolute transform -translate-x-1/2 -translate-y-1/2 group"
@@ -59,21 +68,15 @@ export default function GlobalVisionSection() {
               </div>
             </div>
             
-            {/* Stats overlay */}
+            {/* Stats Overlay: Key metrics of TRIAD's impact */}
             <div className="absolute bottom-6 left-6 right-6 z-20">
               <div className="grid grid-cols-3 gap-6 text-center">
-                <div>
-                  <div className="font-montserrat font-bold text-2xl text-sky-cyan mb-1">5+</div>
-                  <div className="font-inter text-sm text-arctic-white">States</div>
-                </div>
-                <div>
-                  <div className="font-montserrat font-bold text-2xl text-sky-cyan mb-1">1000+</div>
-                  <div className="font-inter text-sm text-arctic-white">Students</div>
-                </div>
-                <div>
-                  <div className="font-montserrat font-bold text-2xl text-sky-cyan mb-1">50+</div>
-                  <div className="font-inter text-sm text-arctic-white">Real Time Projects</div>
-                </div>
+                {stats.map(stat => (
+                  <div key={stat.label}>
+                    <div className="font-montserrat font-bold text-2xl text-sky-cyan mb-1">{stat.value}</div>
+                    <div className="font-inter text-sm text-arctic-white">{stat.label}</div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>

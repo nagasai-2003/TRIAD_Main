@@ -1,7 +1,12 @@
 import { useState } from 'react';
 import { Send } from 'lucide-react';
 
+/**
+ * A contact form component that allows users to send a message.
+ * It includes fields for full name, email, phone number, and a message.
+ */
 export default function ContactForm() {
+  // State to manage the form data
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -9,6 +14,7 @@ export default function ContactForm() {
     message: ''
   });
 
+  // A function to handle input changes and update the form data state
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({
@@ -17,9 +23,11 @@ export default function ContactForm() {
     }));
   };
 
+  // A function to handle form submission
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission logic here
+    // In a real application, you would handle the form submission here, 
+    // such as sending the data to a server or an email service.
     console.log('Form submitted:', formData);
   };
 
@@ -27,7 +35,7 @@ export default function ContactForm() {
     <section id="contact-form" className="py-20 bg-arctic-white">
       <div className="max-w-4xl mx-auto px-6">
         <div className="bg-frost-gray/30 rounded-2xl p-8 md:p-12 shadow-xl border border-frost-gray">
-          {/* Form Header */}
+          {/* Form header with a title and a brief description */}
           <div className="text-center mb-12 fade-in">
             <h2 className="font-montserrat font-bold text-4xl md:text-5xl text-steel-navy mb-6">
               Get in Touch
@@ -37,10 +45,10 @@ export default function ContactForm() {
             </p>
           </div>
           
-          {/* Contact Form */}
+          {/* The main contact form */}
           <form onSubmit={handleSubmit} className="space-y-6 fade-in">
             <div className="grid md:grid-cols-2 gap-6">
-              {/* Full Name */}
+              {/* Full Name input field */}
               <div>
                 <label htmlFor="fullName" className="block font-montserrat font-semibold text-steel-navy mb-3">
                   Full Name
@@ -57,7 +65,7 @@ export default function ContactForm() {
                 />
               </div>
               
-              {/* Email */}
+              {/* Email input field */}
               <div>
                 <label htmlFor="email" className="block font-montserrat font-semibold text-steel-navy mb-3">
                   Email Address
@@ -75,7 +83,7 @@ export default function ContactForm() {
               </div>
             </div>
             
-            {/* Phone Number */}
+            {/* Phone Number input field */}
             <div>
               <label htmlFor="phone" className="block font-montserrat font-semibold text-steel-navy mb-3">
                 Phone Number
@@ -91,7 +99,7 @@ export default function ContactForm() {
               />
             </div>
             
-            {/* Message */}
+            {/* Message textarea */}
             <div>
               <label htmlFor="message" className="block font-montserrat font-semibold text-steel-navy mb-3">
                 Message / Query
@@ -108,7 +116,7 @@ export default function ContactForm() {
               ></textarea>
             </div>
             
-            {/* Submit Button */}
+            {/* Submit button with an icon */}
             <div className="text-center">
               <button
                 type="submit"
@@ -118,7 +126,7 @@ export default function ContactForm() {
                 <span>Send Message</span>
               </button>
               
-              {/* Microcopy */}
+              {/* A small note to the user about the response time */}
               <p className="font-inter text-sm text-charcoal-gray/60 mt-4">
                 We'll get back to you within 24 hours.
               </p>

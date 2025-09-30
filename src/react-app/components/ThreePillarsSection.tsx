@@ -20,11 +20,17 @@ export default function ThreePillarsSection() {
   ];
 
   return (
-    <section className="py-20 bg-arctic-white">
+    <section 
+      className="py-20 bg-arctic-white"
+      aria-labelledby="three-pillars-heading"
+    >
       <div className="max-w-6xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-16 fade-in">
-          <h2 className="font-montserrat font-bold text-4xl md:text-5xl text-steel-navy mb-6">
+          <h2 
+            id="three-pillars-heading"
+            className="font-montserrat font-bold text-4xl md:text-5xl text-steel-navy mb-6"
+          >
             The 3 Pillars of TRIAD
           </h2>
           <p className="font-inter text-lg text-charcoal-gray max-w-2xl mx-auto">

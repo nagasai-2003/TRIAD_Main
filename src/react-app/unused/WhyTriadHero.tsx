@@ -2,10 +2,10 @@ import { Link } from 'react-router-dom';
 
 export default function WhyTriadHero() {
   return (
-    <section className="relative bg-gradient-to-br from-steel-navy via-steel-navy to-blue-900 text-arctic-white py-24 md:py-32 flex items-center justify-center text-center overflow-hidden">
+    <section className="relative bg-gradient-to-br from-steel-navy via-steel-navy to-blue-900 text-arctic-white py-24 md:py-32 flex items-center justify-center text-center overflow-hidden" aria-labelledby="why-triad-hero-heading">
       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-sky-cyan/10 to-transparent"></div>
       <div className="relative z-10 max-w-4xl mx-auto px-6">
-        <h1 className="font-montserrat font-bold text-5xl md:text-7xl mb-6 fade-in">
+        <h1 id="why-triad-hero-heading" className="font-montserrat font-bold text-5xl md:text-7xl mb-6 fade-in">
           Why Choose TRIAD?
         </h1>
         <p className="font-montserrat font-semibold text-xl md:text-2xl text-sky-cyan mb-12 fade-in">

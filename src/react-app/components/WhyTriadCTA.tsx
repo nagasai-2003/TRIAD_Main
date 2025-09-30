@@ -2,10 +2,10 @@ import { Link } from 'react-router-dom';
 
 export default function WhyTriadCTA() {
   return (
-    <section className="py-20 bg-gradient-to-br from-steel-navy to-blue-900 relative">
+    <section className="py-20 bg-gradient-to-br from-steel-navy to-blue-900 relative" aria-labelledby="why-triad-cta-heading">
       <div className="absolute inset-0 opacity-10"></div>
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center text-arctic-white">
-        <h2 className="font-montserrat font-bold text-4xl md:text-5xl mb-6 fade-in">
+        <h2 id="why-triad-cta-heading" className="font-montserrat font-bold text-4xl md:text-5xl mb-6 fade-in">
           Ready to Transform Your Career?
         </h2>
         <p className="font-inter text-xl mb-12 fade-in">

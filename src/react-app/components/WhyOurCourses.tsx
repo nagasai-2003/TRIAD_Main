@@ -19,15 +19,16 @@ const features = [
 ];
 
 function FeatureCard({ feature }: { feature: typeof features[0] }) {
+  const titleId = `feature-title-${feature.title.replace(/\s+/g, '-').toLowerCase()}`;
   return (
-    <div className="bg-arctic-white rounded-2xl p-8 text-center shadow-lg hover:shadow-xl hover:shadow-sky-cyan/10 transition-all duration-300 hover:scale-105 group">
+    <div className="bg-arctic-white rounded-2xl p-8 text-center shadow-lg hover:shadow-xl hover:shadow-sky-cyan/10 transition-all duration-300 hover:scale-105 group" role="listitem" aria-labelledby={titleId}>
       {/* Icon */}
       <div className="flex justify-center items-center h-24 mb-6 group-hover:scale-110 transition-transform duration-300">
         {feature.icon}
       </div>
       
       {/* Title */}
-      <h3 className="font-montserrat font-bold text-2xl text-steel-navy mb-4">
+      <h3 id={titleId} className="font-montserrat font-bold text-2xl text-steel-navy mb-4">
         {feature.title}
       </h3>
       
@@ -41,11 +42,11 @@ function FeatureCard({ feature }: { feature: typeof features[0] }) {
 
 export default function WhyOurCourses() {
   return (
-    <section className="bg-frost-gray py-20">
+    <section className="bg-frost-gray py-20" aria-labelledby="why-our-courses-heading">
       <div className="max-w-6xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="font-montserrat font-bold text-4xl md:text-5xl text-steel-navy mb-6">
+          <h2 id="why-our-courses-heading" className="font-montserrat font-bold text-4xl md:text-5xl text-steel-navy mb-6">
             What Makes TRIAD Courses Different?
           </h2>
           <p className="font-inter text-xl text-charcoal-gray max-w-3xl mx-auto">
@@ -54,7 +55,7 @@ export default function WhyOurCourses() {
         </div>
         
         {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8" role="list">
           {features.map((feature, index) => (
             <FeatureCard key={index} feature={feature} />
           ))}

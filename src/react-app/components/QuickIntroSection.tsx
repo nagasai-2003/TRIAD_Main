@@ -1,35 +1,50 @@
+import { useMemo } from 'react';
 import { GraduationCap, Code, BrainCircuit, Rocket, Info } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-const features = [
-  {
-    icon: <GraduationCap className="w-12 h-12 text-sky-cyan" />,
-    title: "Structured Learning Paths",
-    description: "Our curriculum is designed to take you from novice to expert with a clear, step-by-step roadmap.",
-  },
-  {
-    icon: <Code className="w-12 h-12 text-sky-cyan" />,
-    title: "Hands-On Projects",
-    description: "Apply your skills to real-world projects, building a portfolio that showcases your abilities.",
-  },
-  {
-    icon: <BrainCircuit className="w-12 h-12 text-sky-cyan" />,
-    title: "Expert-Led Instruction",
-    description: "Learn from industry veterans who bring practical experience and cutting-edge insights.",
-  },
-  {
-    icon: <Rocket className="w-12 h-12 text-sky-cyan" />,
-    title: "Career Acceleration",
-    description: "We don't just teach you to code. We prepare you for a successful career in tech.",
-  },
-];
-
+/**
+ * A section that provides a quick introduction to TRIAD Academy.
+ * It highlights the core features and philosophy of the academy and includes a CTA to learn more.
+ */
 export default function QuickIntroSection() {
+
+  // Memoize the features array to prevent it from being recreated on every render.
+  const features = useMemo(() => [
+    {
+      icon: <GraduationCap className="w-12 h-12 text-sky-cyan" />,
+      title: "Structured Learning Paths",
+      description: "Our curriculum is designed to take you from novice to expert with a clear, step-by-step roadmap.",
+    },
+    {
+      icon: <Code className="w-12 h-12 text-sky-cyan" />,
+      title: "Hands-On Projects",
+      description: "Apply your skills to real-world projects, building a portfolio that showcases your abilities.",
+    },
+    {
+      icon: <BrainCircuit className="w-12 h-12 text-sky-cyan" />,
+      title: "Expert-Led Instruction",
+      description: "Learn from industry veterans who bring practical experience and cutting-edge insights.",
+    },
+    {
+      icon: <Rocket className="w-12 h-12 text-sky-cyan" />,
+      title: "Career Acceleration",
+      description: "We don't just teach you to code. We prepare you for a successful career in tech.",
+    },
+  ], []);
+
   return (
-    <section id="quick-intro" className="py-20 bg-arctic-white">
+    <section 
+      id="quick-intro" 
+      className="py-20 bg-arctic-white"
+      aria-labelledby="quick-intro-heading"
+    >
       <div className="max-w-7xl mx-auto px-6">
+        {/* Section Header */}
         <div className="text-center mb-12">
-          <h2 className="font-montserrat font-bold text-4xl text-steel-navy mb-4">
+          <h2 
+            id="quick-intro-heading"
+            className="font-montserrat font-bold text-4xl text-steel-navy mb-4"
+          >
             This is TRIAD Academy
           </h2>
           <p className="font-inter text-lg text-charcoal-gray max-w-3xl mx-auto">
@@ -37,9 +52,14 @@ export default function QuickIntroSection() {
             Learn, Build, and Create.
           </p>
         </div>
+
+        {/* Features Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => (
-            <div key={index} className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl glow-cyan-hover transition-all duration-300 border border-frost-gray text-center">
+            <div 
+              key={index} 
+              className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl glow-cyan-hover transition-all duration-300 border border-frost-gray text-center"
+            >
               <div className="flex justify-center items-center mb-6">
                 {feature.icon}
               </div>
@@ -52,6 +72,8 @@ export default function QuickIntroSection() {
             </div>
           ))}
         </div>
+
+        {/* Call-to-action Button */}
         <div className="text-center mt-12">
           <Link
             to="/about"

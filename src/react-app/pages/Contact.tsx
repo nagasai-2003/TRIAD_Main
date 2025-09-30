@@ -8,7 +8,12 @@ import ClosingCTA from '@/react-app/components/ClosingCTA';
 import WhatsAppButton from '@/react-app/components/WhatsAppButton';
 import Footer from '@/react-app/components/Footer';
 
+/**
+ * The contact page of the application.
+ * It is composed of several sections that provide various ways to contact the company.
+ */
 export default function Contact() {
+  // This effect enables smooth scrolling for the entire page.
   useEffect(() => {
     document.documentElement.style.scrollBehavior = 'smooth';
     return () => {
@@ -19,12 +24,16 @@ export default function Contact() {
   return (
     <div className="min-h-screen relative">
       <WhatsAppButton />
-      <ContactHero />
-      <ContactForm />
-      <ContactDetails />
-      <Map />
-      <SocialConnect />
-      <ClosingCTA />
+      {/* Main content of the page */}
+      <main>
+        <ContactHero />
+        <ContactForm />
+        <ContactDetails />
+        <Map />
+        <SocialConnect />
+        <ClosingCTA />
+      </main>
+      {/* Footer, which is a shared component */}
       <Footer />
     </div>
   );

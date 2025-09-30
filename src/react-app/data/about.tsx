@@ -47,22 +47,22 @@ export const pyramidLayers = [
 // Mentors data
 export const mentors = [
   {
-    name: "T. Naga Sai",
-    expertise: "Quantum Computing and DSA",
-    quote: "Every breakthrough starts with curiosity and proper guidance.",
-    image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=300&h=300&fit=crop&crop=face"
-  },
-  {
     name: "B. Mark Nicholas",
     expertise: "Full Stack Development",
-    quote: "The future belongs to those who understand quantum possibilities.",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face"
+    quote: "Building a robust application is like constructing a skyscraper. You need a strong foundation (backend) and a beautiful, functional facade (frontend)",
+    image: "src/react-app/assets/Nicholas_Professional_1.png"
+  },
+  {
+    name: "T. Naga Sai",
+    expertise: "Quantum Computing and AI",
+    quote: "Quantum computing will unlock the next frontier of AI, moving from complex problem-solving to true simulated intelligence.",
+    image: "src/react-app/assets/Naga_Sai_Professional.png"
   },
   {
     name: "T.G.S Prasad",
     expertise: "MAANG Prep and DSA",
     quote: "Clean code is not just about syntax - it's about thinking clearly.",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop&crop=face"
+    image: "src/react-app/assets/Prasad_Professionl.png"
   },
   // {
   //   name: "Dr. James Thompson",

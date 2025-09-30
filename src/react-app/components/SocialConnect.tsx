@@ -9,10 +9,16 @@ const socialLinks = [
 
 export default function SocialConnect() {
   return (
-    <section className="py-20 bg-frost-gray">
+    <section 
+      className="py-20 bg-frost-gray"
+      aria-labelledby="social-connect-heading"
+    >
       <div className="max-w-4xl mx-auto px-6 text-center">
         <div className="fade-in">
-          <h3 className="font-montserrat font-bold text-4xl text-steel-navy mb-6">
+          <h3 
+            id="social-connect-heading"
+            className="font-montserrat font-bold text-4xl text-steel-navy mb-6"
+          >
             Connect With Us
           </h3>
           <p className="font-inter text-lg text-charcoal-gray mb-12">

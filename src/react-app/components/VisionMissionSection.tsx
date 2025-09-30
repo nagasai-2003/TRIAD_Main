@@ -2,12 +2,19 @@ import { Globe } from 'lucide-react';
 
 export default function VisionMissionSection() {
   return (
-    <section id="vision-mission" className="py-20 bg-arctic-white">
+    <section 
+      id="vision-mission"
+      className="py-20 bg-arctic-white"
+      aria-labelledby="vision-mission-heading"
+    >
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           {/* Text Content */}
           <div className="fade-in">
-            <h2 className="font-montserrat font-bold text-4xl md:text-5xl text-steel-navy mb-8">
+            <h2 
+              id="vision-mission-heading"
+              className="font-montserrat font-bold text-4xl md:text-5xl text-steel-navy mb-8"
+            >
               Our Vision & Mission
             </h2>
             

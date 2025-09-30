@@ -55,11 +55,11 @@ export default function TestimonialsSection() {
   };
 
   return (
-    <section className="py-20 bg-frost-gray">
+    <section className="py-20 bg-frost-gray" aria-labelledby="testimonials-heading">
       <div className="max-w-4xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-16 fade-in">
-          <h2 className="font-montserrat font-bold text-4xl md:text-5xl text-steel-navy mb-6">
+          <h2 id="testimonials-heading" className="font-montserrat font-bold text-4xl md:text-5xl text-steel-navy mb-6">
             Success Stories
           </h2>
           <p className="font-inter text-lg text-charcoal-gray">

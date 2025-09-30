@@ -2,9 +2,14 @@ import { useState, useEffect } from 'react';
 import { Check, Minus, Link as LinkIcon } from 'lucide-react';
 import { Link } from 'react-router';
 
+/**
+ * A section that compares TRIAD Academy with traditional institutes and free online learning.
+ * It features a comparison table and a set of key differentiators.
+ */
 export default function CompetitorComparisonSection() {
   const [visibleRows, setVisibleRows] = useState<number[]>([]);
 
+  // Data for the comparison table
   const comparisonData = [
     {
       feature: "Future Tech (AI, Quantum, ML)",
@@ -50,39 +55,48 @@ export default function CompetitorComparisonSection() {
     }
   ];
 
+  // An effect to animate the table rows as they become visible
   useEffect(() => {
+    // Create an IntersectionObserver to track when the table rows enter the viewport
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
+            // Get the index of the intersecting row from the data attribute
             const index = parseInt(entry.target.getAttribute('data-index') || '0');
+            // Add the index to the visibleRows state to trigger the animation
             setVisibleRows(prev => [...prev, index]);
           }
         });
       },
+      // Trigger the animation when 50% of the element is visible
       { threshold: 0.5 }
     );
 
+    // Get all the table row elements
     const rowElements = document.querySelectorAll('.comparison-row');
+    // Observe each row element
     rowElements.forEach((el) => observer.observe(el));
 
+    // Disconnect the observer when the component unmounts
     return () => observer.disconnect();
   }, []);
 
+  // A function to render the appropriate icon based on the value
   const renderIcon = (value: boolean | string) => {
     if (value === true) {
       return <Check className="w-6 h-6 text-sky-cyan" />;
-    } else if (value === "partial") {
+    } 
+    if (value === "partial") {
       return <div className="w-6 h-6 flex items-center justify-center text-amber-500 font-bold">~</div>;
-    } else {
-      return <Minus className="w-6 h-6 text-gray-400" />;
-    }
+    } 
+    return <Minus className="w-6 h-6 text-gray-400" />;
   };
 
   return (
     <section className="py-20 bg-frost-gray">
       <div className="max-w-6xl mx-auto px-6">
-        {/* Section Header */}
+        {/* Section header with a title and a brief description */}
         <div className="text-center mb-16 fade-in">
           <h2 className="font-montserrat font-bold text-4xl md:text-5xl text-steel-navy mb-6">
             Why TRIAD vs Others
@@ -92,9 +106,9 @@ export default function CompetitorComparisonSection() {
           </p>
         </div>
         
-        {/* Comparison Table */}
+        {/* The main comparison table */}
         <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-frost-gray">
-          {/* Table Header */}
+          {/* Table header */}
           <div className="bg-steel-navy text-arctic-white p-6">
             <div className="grid grid-cols-4 gap-6 items-center">
               <div className="font-montserrat font-bold text-lg">Features</div>
@@ -113,7 +127,7 @@ export default function CompetitorComparisonSection() {
             </div>
           </div>
           
-          {/* Table Body */}
+          {/* Table body with animated rows */}
           <div>
             {comparisonData.map((row, index) => (
               <div 
@@ -142,7 +156,7 @@ export default function CompetitorComparisonSection() {
             ))}
           </div>
           
-          {/* Table Footer */}
+          {/* Table footer with a CTA button */}
           <div className="bg-sky-cyan/10 p-6">
             <div className="text-center">
               <p className="font-inter text-charcoal-gray mb-4">
@@ -159,7 +173,7 @@ export default function CompetitorComparisonSection() {
           </div>
         </div>
         
-        {/* Additional Info Cards */}
+        {/* Additional information cards highlighting key benefits */}
         <div className="grid md:grid-cols-3 gap-6 mt-12">
           <div className="bg-white rounded-xl p-6 border-l-4 border-sky-cyan shadow-lg fade-in">
             <h4 className="font-montserrat font-bold text-steel-navy mb-2">Future-Ready</h4>
