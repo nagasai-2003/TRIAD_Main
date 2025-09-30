@@ -20,7 +20,7 @@ export const seriesData: Series[] = [
   {
     title: 'Quantum Computing Series',
     description: 'A deep dive into the world of quantum computing, from the basics to advanced topics.',
-    imageUrl: 'public/Quantum_Series_Hero.png',
+    imageUrl: '/Quantum_Series_Hero.png',
     episodes: [
       {
         title: 'Episode 1: Introduction to Quantum Computing',
@@ -48,7 +48,7 @@ export const seriesData: Series[] = [
   {
     title: 'Generative AI and Generative AI Tools',
     description: 'Explore the fundamentals of AI and build intelligent systems with machine learning.',
-    imageUrl: 'public/AI_Series_Banner.png',
+    imageUrl: '/AI_Series_Banner.png',
     episodes: [
       {
         title: 'Episode 1: What is AI?',
